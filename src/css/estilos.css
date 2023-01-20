@@ -47,13 +47,14 @@ body {
   max-width: 1360px; /* vw = viewport width (largura da tela do usuario)*/
 }
 .container .imagem-titulo {
-  max-width: 500px;
+  max-width: 400px;
 }
 .container .descricao {
   color: cyan;
   width: 85%;
   font-size: 18px;
   margin: 30px 0;
+  text-align: left;
 }
 .container .botao-trailer {
   background-color: red;
@@ -76,9 +77,11 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden; /*"esconde" a barrinha de rolagem quando "transborda" a tela */
+  justify-content: center;
 }
 .fundo-video .video {
   height: 100vh;
+  width: 100vw;
 }
 
 /* gambiarra para cria o efeito de opacidade, transparencia */
