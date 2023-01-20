@@ -13,7 +13,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/estilos.css" />
+
     <title>Super Mario Bros - O Filme</title>
   </head>
   <body>
@@ -24,15 +26,21 @@
     </div>
     <header class="cabecalho">
       <a>
-        <img src="./imagens/logo-chapeu-mario.png" alt="logo chapeu mario" />
+        <img
+          class="logo"
+          src="./imagens/logo-chapeu-mario.png"
+          alt="logo chapeu mario"
+        />
       </a>
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <!-- # significa não fazer nada quando clickar -->
+          <li><a href="#">Detalhes</a></li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <ul class="menu">
-        <li>Home</li>
-        <li>Detalhes</li>
-      </ul>
-    </nav>
+
     <main class="container">
       <div class="informacoes">
         <img
@@ -46,9 +54,15 @@
           minima! Nostrum illo, maiores quidem atque animi laboriosam porro
           impedit pariatur eum.
         </p>
-        <button class="botao"></button>
+        <button class="botao-trailer">Assista ao Trailer</button>
       </div>
       <img class="mario" src="imagens/super-mario-chars.png" alt="" />
+      <div class="modal">
+        <div class="conteudo-modal">
+          <span class="fechar-modal">Fechar Vídeo</span>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/wkn-Gb-Fhac" title="SUPER MARIO BROS FILME | TEASER TRAILER OFICIAL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
     </main>
   </body>
 </html>

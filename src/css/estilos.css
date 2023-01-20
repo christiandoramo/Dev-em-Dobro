@@ -1,8 +1,141 @@
-*{
-    font-family: 'Poppins', sans-serif;
+/* Os background color são bem aplicados na hora de descobrir como está ficando os espaçamentos */
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-body{
-    display: block;
-    margin: auto 0;
+.cabecalho .logo {
+  width: 65px;
 }
+.cabecalho .menu {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  height: 100%; /* ocupar certa % do total da altura do ELEMENTO pai */
+}
+.cabecalho nav li a {
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+  padding: 10px 20px;
+  /*10 pra cima e 10 pra baixo, 20 pra cada lado no espaçamento dentro da imagem*/
+  /*Ou seja, o padding, permite que seja clickavel fora do texto mas sim no bloco que não mudou de tamanho*/
+  border-radius: 5px;
+  transition: 0.22s;
+}
+.cabecalho nav li a:hover {
+  font-weight: bold;
+  background-color: orangered;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex; /* display:flex coloca os elementos filhos diretamente em flex-direction: row*/
+  /* ou seja, vai flexiona em forma de linha os elementos filhos diretos*/
+  align-items: center; /* só funciona quando tem uma altura"height" pois align-items alinha 
+  verticalmente*/
+  padding: 0px 30px 30px; /* REALMENTE ajustou a tela tirando as barras de rolagem*/
+  height: (100vh -71.25px); /*vh = viewport height (altura da tela do usuario)*/
+}
+.cabecalho {
+  /* background-color: blue; */
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1360px; /* vw = viewport width (largura da tela do usuario)*/
+}
+.container .imagem-titulo {
+  max-width: 500px;
+}
+.container .descricao {
+  color: cyan;
+  width: 85%;
+  font-size: 18px;
+  margin: 30px 0;
+}
+.container .botao-trailer {
+  background-color: red;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+  transition: 0.5s all ease-in-out; /*ease-in-out anime na entrada e na saida*/
+}
+.container .botao-trailer:hover {
+  transform: scale(1.1);
+}
+.fundo-video {
+  background-color: blue;
+  position: absolute; /*position troca o contexto no qual o elemento selecionado se encontra, como se mudasse de camada da tela como no photoshop */
+  z-index: -1; /* camada -1 que é abaixo da camada 0 logo fica atras*/
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /*"esconde" a barrinha de rolagem quando "transborda" a tela */
+}
+.fundo-video .video {
+  height: 100vh;
+}
+
+/* gambiarra para cria o efeito de opacidade, transparencia */
+/* criando um elemento novo html por ultimo logo apos os outros elementos terem sido criados no arquivo html */
+.fundo-video::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* background: rgb(0, 0, 0); */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.modal {
+  background-color: red;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgb(52, 52, 50, 0.749);
+  visibility: hidden; /* deixa elemento indisponivel*/
+}
+
+.conteudo-modal {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  gap: 15px; /*  grudou o Fechar Video no video */
+}
+
+.fechar-modal {
+  background-color: #fff;
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  width: 60px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.modal iframe {
+  border-width: 0;
+  width: 640px;
+  height: 360px;
+}
+.modal.aberto {
+    visibility: visible; /* deixa elemento indisponivel*/
+  }
