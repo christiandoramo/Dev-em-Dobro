@@ -140,5 +140,6 @@ body {
   height: 360px;
 }
 .modal.aberto {
-    visibility: visible; /* deixa elemento indisponivel*/
-  }
+  opacity: 1;
+  visibility: visible; /* deixa elemento indisponivel*/
+}
